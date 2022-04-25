@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "ios-keychain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/IBM/ios-keychain",
+      "state" : {
+        "revision" : "f468dc550f3ee447c9340a35f743aae4ab316a57",
+        "version" : "1.0.4"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections.git",
+      "state" : {
+        "revision" : "48254824bb4248676bf7ce56014ff57b142b77eb",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
