@@ -195,7 +195,6 @@ class PortfolioViewModel: ObservableObject {
         guard !portfolioStocks.isEmpty else { return false }
         let currencyTypes = portfolioStocks.map(\.currency)
         guard let localeCurrency = NSLocale.autoupdatingCurrent.currencyCode else { return false }
-        print(currencyTypes, wealthCalculator.currencyRates)
         if wealthCalculator.currencyRates.isEmpty {
             if currencyTypes.count >= 2 {
                 return false

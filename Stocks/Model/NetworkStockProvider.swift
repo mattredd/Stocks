@@ -72,7 +72,7 @@ class NetworkStockProvider: StockProvider {
     func fetchData<T: Decodable>(with request: URLRequest, decoding: T.Type) async throws -> T {
         do {
             let (data, response) = try await urlSession.data(for: request)
-            print(String(decoding: data, as: UTF8.self))
+//            print(String(decoding: data, as: UTF8.self))
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
                 throw APIErrors.invalidResponse(statusCode: (response as? HTTPURLResponse)?.statusCode ?? 400)
             }

@@ -32,6 +32,7 @@ struct EditPortfolioStockView: View {
                 Text(portfolioStock.name)
                     .font(.headline)
                     .multilineTextAlignment(.center)
+                    .padding(.top, UIConstants.systemSpacing)
                 HStack {
                     VStack {
                         Text("Number of Shares")

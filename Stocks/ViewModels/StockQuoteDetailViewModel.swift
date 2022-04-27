@@ -43,7 +43,11 @@ class StockQuoteDetailViewModel: ObservableObject {
         }
         do {
             let stockChartData = try await stockService.fetchCharts(stocks: [symbol], interval: chartInterval)
-            chartData = stockChartData.first?.parseChartData(chartInterval: chartInterval, timeZone: stockQuote.tz ?? TimeZone(secondsFromGMT: 0)!, closingTime: (16, 0))
+            if let data = stockChartData.first, (data.timestamp?.count ?? 0) > 0 {
+                chartData = data.parseChartData(chartInterval: chartInterval, timeZone: stockQuote.tz ?? TimeZone(secondsFromGMT: 0)!, closingTime: (16, 0))
+            } else {
+                chartErrorMessage = "There was a problem loading the chart data"
+            }
         }
         catch {
             chartErrorMessage = "There was a problem loading the chart data"

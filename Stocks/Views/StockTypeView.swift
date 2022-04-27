@@ -33,6 +33,8 @@ struct StockTypeView: View {
             return .brown
         case .ETF:
             return .purple
+        case .option:
+            return .yellow
         case .unknown:
             return .primary
         }

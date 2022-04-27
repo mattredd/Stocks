@@ -9,7 +9,7 @@ import Foundation
 
 enum StockType: String, Codable {
     
-    case equity = "equity", fund = "fund", index = "index", currency = "currency", future = "future", ETF = "etf", unknown = "unknown"
+    case equity = "equity", fund = "fund", index = "index", currency = "currency", future = "future", ETF = "etf", option = "option", unknown = "unknown"
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

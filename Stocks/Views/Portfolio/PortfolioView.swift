@@ -108,7 +108,6 @@ struct PortfolioView: View {
         VStack(spacing: UIConstants.systemSpacing * 2) {
             Text(portfolioVM.errorMessage)
                 .foregroundColor(.secondary)
-                .bold()
             if portfolioVM.vaultStatus != .authorised {
                 Button {
                     Task { [weak portfolioVM] in
@@ -121,7 +120,7 @@ struct PortfolioView: View {
                 .foregroundColor(.accentColor)
             } else {
                 Text("Tap the plus button at the top of the screen to add a stock")
-                    .bold()
+                    .foregroundColor(.secondary)
             }
         }
         .foregroundColor(.secondary)

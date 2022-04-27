@@ -34,7 +34,7 @@ struct AddStockView: View {
                     , alignment: .leading)
                 TextField("Search Stocks", text: $addStockVM.searchTerm, prompt: Text("Search for stocks"))
                     .padding(UIConstants.systemSpacing)
-                    .background(Color.white.cornerRadius(UIConstants.cornerRadius))
+                    .background(Color(uiColor: .tertiarySystemBackground).cornerRadius(UIConstants.cornerRadius))
                     .submitLabel(.search)
                     .onSubmit {
                         Task { [weak addStockVM] in
