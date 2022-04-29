@@ -16,7 +16,7 @@ struct PortfolioView: View {
         ZStack {
             VStack {
                 if portfolioVM.portfolioStocks.count > 0 && portfolioVM.vaultStatus == .authorised {
-                    PortfolioStocksListSortMethodView(profitSort: $portfolioVM.portfolioSort)
+                    PortfolioSortOrderPickerView(profitSort: $portfolioVM.portfolioSort)
                         PortfolioListView()
                             .environmentObject(portfolioVM)
                 } else {

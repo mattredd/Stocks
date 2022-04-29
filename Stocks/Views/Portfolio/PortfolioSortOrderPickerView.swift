@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PortfolioStocksListSortMethodView: View {
+struct PortfolioSortOrderPickerView: View {
     
     @Binding var profitSort: PortfolioProfitSort
     @Namespace var animationNS
@@ -19,7 +19,7 @@ struct PortfolioStocksListSortMethodView: View {
                 Text("Ascending")
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    .colorMultiply(profitSort == .ascending ? .orange : .primary)
+                    .colorMultiply(profitSort == .ascending ? .orange : .secondary)
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, UIConstants.systemSpacing)
                     .overlay(Rectangle().fill(.clear).frame(height: markerHeight).matchedGeometryEffect(id: "sortChooser", in: animationNS, isSource: profitSort == .ascending), alignment: .bottom)
@@ -28,14 +28,11 @@ struct PortfolioStocksListSortMethodView: View {
                             profitSort = .ascending
                         }
                     }
-                Rectangle()
-                    .fill(.secondary)
-                    .frame(width: UIConstants.lineWidth / 2)
-                    .padding(.vertical, UIConstants.compactSystemSpacing)
+                Divider()
                 Text("Descending")
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    .colorMultiply(profitSort != .ascending ? .orange : .primary)
+                    .colorMultiply(profitSort != .ascending ? .orange : .secondary)
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, UIConstants.systemSpacing)
                     .overlay(Rectangle().fill(.clear).frame(height: markerHeight).matchedGeometryEffect(id: "sortChooser", in: animationNS, isSource: profitSort != .ascending), alignment: .bottom)
@@ -53,6 +50,6 @@ struct PortfolioStocksListSortMethodView: View {
 
 struct PortfolioSortChooserView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioStocksListSortMethodView(profitSort: .constant(.ascending))
+        PortfolioSortOrderPickerView(profitSort: .constant(.ascending))
     }
 }
