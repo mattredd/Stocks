@@ -42,19 +42,19 @@ struct StockChartData: Codable {
                 }
             }
         } else if chartInterval == .weekRange {
-            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.day], from: time, to: lastPossibleTime).day ?? 0 <= 5 }
+            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.day], from: time, to: lastPossibleTime).day ?? 0 < 5 }
         } else if chartInterval == .monthRange {
-            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.month], from: time, to: lastPossibleTime).month ?? 0 <= 1 }
+            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.month], from: time, to: lastPossibleTime).month ?? 0 < 1 }
         } else if chartInterval == .threeMonthsRange {
-            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.month], from: time, to: lastPossibleTime).month ?? 0 <= 2 }
+            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.month], from: time, to: lastPossibleTime).month ?? 0 < 3 }
         } else if chartInterval == .sixMonthsRange {
-            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.month], from: time, to: lastPossibleTime).month ?? 0 <= 5 }
+            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.month], from: time, to: lastPossibleTime).month ?? 0 < 6 }
         } else if chartInterval == .yearRange {
             timeSliceIndex = timestamp.firstIndex {time in localCalendar.dateComponents([.year], from: time, to: lastPossibleTime).year ?? 0 < 1 }
         } else if chartInterval == .fiveYears {
-            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.year], from: time, to: lastPossibleTime).year ?? 0 <= 5 }
+            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.year], from: time, to: lastPossibleTime).year ?? 0 < 5 }
         } else if chartInterval == .tenYears {
-            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.year], from: time, to: lastPossibleTime).year ?? 0 <= 10 }
+            timeSliceIndex = timestamp.firstIndex { time in localCalendar.dateComponents([.year], from: time, to: lastPossibleTime).year ?? 0 < 10 }
         }
         return (times ?? Array(timestamp[(timeSliceIndex ?? 0)...]), Array(price[(timeSliceIndex ?? 0)...]))
     }
