@@ -27,7 +27,7 @@ struct PortfolioSummary: View {
                     .font(.title.weight(.semibold))
                     .frame(maxWidth: .infinity)
                     .padding(UIConstants.systemSpacing)
-                if portfolioVM.canShowSummary {
+                if let originalValue = originalValue, let currentValue = currentValue, let profit = difference {
                     Text("Total Value at Time of Purchase")
                         .padding(.bottom, UIConstants.compactSystemSpacing)
                     Text("\(originalValue.formatted(.currency(code: Locale.autoupdatingCurrent.currencyCode ?? "USD")))")
@@ -38,12 +38,12 @@ struct PortfolioSummary: View {
                     Text("\(currentValue.formatted(.currency(code: Locale.autoupdatingCurrent.currencyCode ?? "USD")))")
                         .bold()
                         .padding(.bottom, UIConstants.systemSpacing)
-                    Text("\((difference).formatted(.currency(code: Locale.autoupdatingCurrent.currencyCode ?? "USD").sign(strategy: .always(showZero: true))))")
+                    Text("\((profit).formatted(.currency(code: Locale.autoupdatingCurrent.currencyCode ?? "USD").sign(strategy: .always(showZero: true))))")
                         .font(.title3)
                         .bold()
-                        .foregroundColor(difference >= 0 ? .green : .red)
+                        .foregroundColor(profit >= 0 ? .green : .red)
                         .padding(.bottom, UIConstants.compactSystemSpacing)
-                    PercentChangeView(percentageChange: difference / originalValue * 100)
+                    PercentChangeView(percentageChange: profit / originalValue * 100)
                 } else {
                     Text("Unable to show your Portfolio Summary as currency conversion rates are unavailable")
                         .multilineTextAlignment(.center)

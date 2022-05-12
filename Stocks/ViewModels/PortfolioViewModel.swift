@@ -191,21 +191,6 @@ class PortfolioViewModel: ObservableObject {
         }
     }
     
-    var canShowSummary: Bool {
-        guard !portfolioStocks.isEmpty else { return false }
-        let currencyTypes = portfolioStocks.map(\.currency)
-        guard let localeCurrency = NSLocale.autoupdatingCurrent.currencyCode else { return false }
-        if wealthCalculator.currencyRates.isEmpty {
-            if currencyTypes.count >= 2 {
-                return false
-            } else {
-                return currencyTypes.first! == localeCurrency
-            }
-        } else {
-            return true
-        }
-    }
-    
     // Tells the view whether there is a modal view presented and the view can adapt as neccessary
     var modalViewOnScreen: Bool {
         showFaceIDAuthorisationScreen || showAddStockView || showPortfolioSummary || editingIndex != nil
