@@ -45,8 +45,8 @@
 		34808FA927EC22ED00B29F2F /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34808FA827EC22ED00B29F2F /* LineGraph.swift */; };
 		3481224E27BC89A900FD6C3A /* StockQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3481224D27BC89A900FD6C3A /* StockQueryResult.swift */; };
 		3488EF7227C2B2360078A9C4 /* NumericDigitalDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3488EF7127C2B2360078A9C4 /* NumericDigitalDisplayView.swift */; };
-		349FA777280934EA00964818 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 349FA776280934EA00964818 /* OrderedCollections */; };
 		349FA77A2809350800964818 /* Keychain in Frameworks */ = {isa = PBXBuildFile; productRef = 349FA7792809350800964818 /* Keychain */; };
+		34A27F3A285E33E700C68599 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 34A27F39285E33E700C68599 /* OrderedCollections */; };
 		34A439F027D05CBE00D5DEFE /* FaceIDAuthorisationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A439EF27D05CBE00D5DEFE /* FaceIDAuthorisationView.swift */; };
 		34A943E527EABC990007A0F0 /* PortfolioSortOrderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A943E427EABC990007A0F0 /* PortfolioSortOrderPickerView.swift */; };
 		34B7E86727B0AFD400693A28 /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7E86627B0AFD400693A28 /* StockService.swift */; };
@@ -160,8 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A27F3A285E33E700C68599 /* OrderedCollections in Frameworks */,
 				349FA77A2809350800964818 /* Keychain in Frameworks */,
-				349FA777280934EA00964818 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +194,7 @@
 				342EAD7D27AA29410068728C /* Stocks */,
 				342EAD8E27AA29430068728C /* StocksTests */,
 				342EAD7C27AA29410068728C /* Products */,
+				34A27F38285E33E700C68599 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +292,13 @@
 			path = Markets;
 			sourceTree = "<group>";
 		};
+		34A27F38285E33E700C68599 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34B7E87427B0C3E200693A28 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,8 +393,8 @@
 			);
 			name = Stocks;
 			packageProductDependencies = (
-				349FA776280934EA00964818 /* OrderedCollections */,
 				349FA7792809350800964818 /* Keychain */,
+				34A27F39285E33E700C68599 /* OrderedCollections */,
 			);
 			productName = Stocks;
 			productReference = 342EAD7B27AA29410068728C /* Stocks.app */;
@@ -833,15 +841,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		349FA776280934EA00964818 /* OrderedCollections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 349FA775280934EA00964818 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = OrderedCollections;
-		};
 		349FA7792809350800964818 /* Keychain */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 349FA7782809350800964818 /* XCRemoteSwiftPackageReference "ios-keychain" */;
 			productName = Keychain;
+		};
+		34A27F39285E33E700C68599 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 349FA775280934EA00964818 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
