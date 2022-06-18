@@ -34,7 +34,7 @@ class WatchlistViewModel: ObservableObject {
     }
     
     func fetchStocks() async {
-        message = ""
+        message.removeAll()
         isLoading = true
         defer {
             isLoading = false
@@ -64,6 +64,9 @@ class WatchlistViewModel: ObservableObject {
     func deleteStocks(indices: IndexSet) {
         userStocksArray.elements.remove(atOffsets: indices)
         quotes.remove(atOffsets: indices)
+        if quotes.isEmpty {
+            message = "To add an item to your watchlist, tap the plus button at the top of the screen."
+        }
     }
     
     func reorderStocks(indices: IndexSet, offset: Int) {

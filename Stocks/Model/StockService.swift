@@ -14,6 +14,7 @@ struct StockService {
     let chartCache = ChartCache()
     
     func fetchQuote(stocks: [String]) async throws -> [StockQuote] {
+        guard !stocks.isEmpty else { return [] }
         // As the API only allows batches of 10 quotes at one time, we need to break the stocks down and have multiple API calls
         if stocks.count > 10 {
             var quotes: [StockQuote] = []
