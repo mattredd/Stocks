@@ -10,45 +10,41 @@ import SwiftUI
 struct CommoditiesCellView: View {
     
     @EnvironmentObject var commoditiesVM: CommoditiesViewModel
-    let index: Int
+    let commodityItem: CommodityItem
     let floatingPointFormatter = FloatingPointFormatStyle<Double>.number.precision(.fractionLength(2))
-    let viewAspectRatio = 0.6
+    
+    let nameHeight: Double
     
     var body: some View {
-        let backgroundColour = commoditiesVM.quotes[index].change ?? 0 < 0 ? Color.red : Color.green
+        let quote = commoditiesVM.quotes[commodityItem.symbol]!
+        let backgroundColour = quote.change ?? 0 < 0 ? Color.red : Color.green
         VStack {
-            Text(commoditiesVM.commoditiesNames[index])
+            Text(commodityItem.name)
                 .font(.title.weight(.bold))
                 .multilineTextAlignment(.center)
-            if let exchangeName = commoditiesVM.quotes[index].exchangeName {
-                Text(exchangeName)
-                    .font(.footnote)
-            }
-            Spacer()
-            priceView(commodity: commoditiesVM.quotes[index])
-            Spacer()
-            if let fiftyTwoWeekLow = commoditiesVM.quotes[index].fiftyTwoWeekLow, let fiftyTwoWeekHigh = commoditiesVM.quotes[index].fiftyTwoWeekHigh {
-                VStack(spacing: UIConstants.compactSystemSpacing) {
-                    VStack {
-                        Text("52 Week Low")
-                            .font(.body.weight(.bold))
-                        Text(fiftyTwoWeekLow.formatted(floatingPointFormatter))
-                    }
-                    VStack {
-                        Text("52 Week High")
-                            .font(.body.weight(.bold))
-                        Text(fiftyTwoWeekHigh.formatted(floatingPointFormatter))
-                    }
+                .frame(height: nameHeight)
+            priceView(commodity: quote)
+            if let fiftyTwoWeekLow = quote.fiftyTwoWeekLow, let fiftyTwoWeekHigh = quote.fiftyTwoWeekHigh {
+                VStack() {
+                    Text("52 Week Range")
+                        .font(.body.weight(.bold))
+                    Text("\(fiftyTwoWeekLow.formatted(floatingPointFormatter))-\(fiftyTwoWeekHigh.formatted(floatingPointFormatter))")
                 }
                 .multilineTextAlignment(.leading)
+                .padding(.top, UIConstants.compactSystemSpacing)
             }
-            Spacer()
-            Text(commoditiesVM.quotes[index].marketDate?.formatted() ?? "")
-                .font(.footnote)
-                .bold()
+            if let exchangeName = quote.exchangeName {
+                Text(exchangeName)
+                    .font(.footnote)
+                    .padding(.top, UIConstants.compactSystemSpacing)
+            }
+            if let marketDate = quote.marketDate {
+                Text(marketDate.formatted())
+                    .font(.footnote)
+                    .bold()
+            }
         }
         .frame(maxWidth: .infinity)
-        .aspectRatio(viewAspectRatio, contentMode: .fill)
         .foregroundColor(.white)
         .padding(UIConstants.systemSpacing)
         .background(.linearGradient(colors: [backgroundColour, backgroundColour.opacity(0.8)], startPoint: .topLeading, endPoint: .bottomTrailing))

@@ -26,6 +26,7 @@
 		344D4CD927F2979500CF140A /* NumericDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D4CD827F2979500CF140A /* NumericDisplayOptions.swift */; };
 		344D4CDB27F299FB00CF140A /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D4CDA27F299FA00CF140A /* UIConstants.swift */; };
 		344D4CDD27F29BBA00CF140A /* DigitalArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D4CDC27F29BBA00CF140A /* DigitalArrowView.swift */; };
+		34537810288F7BBB00B6A1FC /* Commodities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453780F288F7BBB00B6A1FC /* Commodities.swift */; };
 		345E0B7B27C87F8C00F0AC08 /* CommoditiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E0B7A27C87F8C00F0AC08 /* CommoditiesViewModel.swift */; };
 		345E0B7E27C8848800F0AC08 /* CommoditiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E0B7D27C8848800F0AC08 /* CommoditiesView.swift */; };
 		3469258F2807C0A0005DA6AA /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3469258E2807C0A0005DA6AA /* URLExtension.swift */; };
@@ -107,6 +108,7 @@
 		344D4CD827F2979500CF140A /* NumericDisplayOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericDisplayOptions.swift; sourceTree = "<group>"; };
 		344D4CDA27F299FA00CF140A /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		344D4CDC27F29BBA00CF140A /* DigitalArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalArrowView.swift; sourceTree = "<group>"; };
+		3453780F288F7BBB00B6A1FC /* Commodities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commodities.swift; sourceTree = "<group>"; };
 		3458531E28087F4A006D09E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		345E0B7A27C87F8C00F0AC08 /* CommoditiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommoditiesViewModel.swift; sourceTree = "<group>"; };
 		345E0B7D27C8848800F0AC08 /* CommoditiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommoditiesView.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				3434B428280F9B0A00EA73FA /* StockChartTimeRange.swift */,
 				34D6BD4E27C5D71000FFCF87 /* StockLineChart.swift */,
 				34808FA827EC22ED00B29F2F /* LineGraph.swift */,
+				3453780F288F7BBB00B6A1FC /* Commodities.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				342EADAE27AA2F390068728C /* StockQuote.swift in Sources */,
 				34D6BD5127C5E50200FFCF87 /* OpeningValueShape.swift in Sources */,
 				34C3D32127F166B2003FC4E7 /* AppConstants.swift in Sources */,
+				34537810288F7BBB00B6A1FC /* Commodities.swift in Sources */,
 				3481224E27BC89A900FD6C3A /* StockQueryResult.swift in Sources */,
 				34A439F027D05CBE00D5DEFE /* FaceIDAuthorisationView.swift in Sources */,
 				34B7E86727B0AFD400693A28 /* StockService.swift in Sources */,
