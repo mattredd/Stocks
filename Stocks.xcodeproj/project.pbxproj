@@ -66,7 +66,6 @@
 		34D6BD4F27C5D71000FFCF87 /* StockLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6BD4E27C5D71000FFCF87 /* StockLineChart.swift */; };
 		34D6BD5127C5E50200FFCF87 /* OpeningValueShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6BD5027C5E50200FFCF87 /* OpeningValueShape.swift */; };
 		34DB93B327CB15D600CCB09F /* WealthCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB93B227CB15D600CCB09F /* WealthCalculator.swift */; };
-		34DE731F280925EA00855560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DE731E280925EA00855560 /* Assets.xcassets */; };
 		34DEB3AD27BDD54D000CEC5D /* NetworkStockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEB3AC27BDD54D000CEC5D /* NetworkStockProvider.swift */; };
 		34DEB3AF27BDEE4D000CEC5D /* StockTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEB3AE27BDEE4D000CEC5D /* StockTypeView.swift */; };
 		34DEB3B127BDEE5C000CEC5D /* StockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEB3B027BDEE5C000CEC5D /* StockType.swift */; };
@@ -468,7 +467,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34DE731F280925EA00855560 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
