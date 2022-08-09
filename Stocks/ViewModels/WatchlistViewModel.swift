@@ -7,11 +7,12 @@
 
 import SwiftUI
 import OrderedCollections
+import WidgetKit
 
 @MainActor
 class WatchlistViewModel: ObservableObject {
     
-    @AppStorage(AppConstants.userDefaultsStocksKey) var userStocks = ""
+    @AppStorage(AppConstants.userDefaultsStocksKey, store: UserDefaults(suiteName: AppConstants.userStocksGroup)) var userStocks = ""
     @Published var quotes: [StockQuote] = []
     @Published var showAddStockView = false
     @Published var isLoading = false
@@ -59,6 +60,9 @@ class WatchlistViewModel: ObservableObject {
         userStocksArray.append(symbol)
         let quote = (try? await stockService.fetchQuote(stocks: [symbol])) ?? []
         quotes.append(contentsOf: quote)
+        if quotes.count <= 2 {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
     
     func deleteStocks(indices: IndexSet) {
@@ -67,11 +71,15 @@ class WatchlistViewModel: ObservableObject {
         if quotes.isEmpty {
             message = "To add an item to your watchlist, tap the plus button at the top of the screen."
         }
+        if quotes.count <= 1 {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
     
     func reorderStocks(indices: IndexSet, offset: Int) {
         userStocksArray.elements.move(fromOffsets: indices, toOffset: offset)
         quotes.move(fromOffsets: indices, toOffset: offset)
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
 }
