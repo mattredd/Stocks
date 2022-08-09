@@ -31,4 +31,6 @@ The portfolio view is a way to monitor your financial portfolio. You can add you
 
 ## Widget
 
+<img width="231" alt="Simulator Screen Shot - iPhone 13 - 2022-08-09 at 18 35 38" src="https://user-images.githubusercontent.com/5818573/183722023-81b47b76-ac0b-4bd8-8e70-08f6125efd08.png">
+
 The app uses WidgetKit so that users can place a widget on their home screen so that they can quickly glance at their data. The widget will show the first two stocks in the users watchlist.
